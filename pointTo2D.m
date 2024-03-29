@@ -13,14 +13,7 @@ end
 %construct R matrix
 R=zeros(4);
 R(4,4) = 1;
-for i=1:3
-    %Zhat
-    R(3,i)=world_pos(i)-cam.position(i);
-end
-%Xhat
-R(1,1:3)=cross([0,0,1],R(3,1:3));
-%Yhat
-R(2,1:3)=cross(R(3,1:3),R(1,1:3));
+R(1:3,1:3)=cam.Rmat
 
 %make perspective matrix
 Pers=zeros(3,4);
