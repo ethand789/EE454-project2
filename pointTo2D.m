@@ -13,7 +13,7 @@ end
 %construct R matrix
 R=zeros(4);
 R(4,4) = 1;
-R(1:3,1:3)=cam.Rmat
+R(1:3,1:3)=cam.Rmat;
 
 %make perspective matrix
 Pers=zeros(3,4);
@@ -21,5 +21,10 @@ Pers(3,3)=1;
 Pers(1,1)=cam.foclen;
 Pers(2,2)=cam.foclen;
 
+%calculate result
+result = Pers*R*S*world_pos;
+
+x_out=result(1)/result(3);
+y_out=result(2)/result(3);
 
 end
