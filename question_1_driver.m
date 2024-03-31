@@ -14,4 +14,17 @@ for i=1:39
     res2(i,1:2)=pointTo2D(input,im2);
 end
 
+imData = imread('Project2DataFiles\im1corrected.jpg');
+
+imshow(imData);
+hold on
+
+scatter(res1, res2, 'r', 'o');
+
+hold off
+
+xlabel('X');
+ylabel('Y');
+title('Scatter Plot of X,Y Points on Image');
+
 end
