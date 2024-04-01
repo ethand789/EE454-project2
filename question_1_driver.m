@@ -18,6 +18,7 @@ for i=1:39
 end
 
 %present images with overlay of calculated points
+%{
 % imData = imread('Project2DataFiles\im1corrected.jpg');
 imData = imread('Project2DataFiles\im2corrected.jpg');
 
@@ -32,7 +33,7 @@ hold off
 xlabel('X');
 ylabel('Y');
 title('Scatter Plot of X,Y Points on Image');
-
+%}
 
 
 end
