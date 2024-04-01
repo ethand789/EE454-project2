@@ -14,6 +14,7 @@ t2 = cam2.Pmat(1:3,4);
 c1 = cam1.position';
 c2 = cam2.position';
 
+
 %compute vector v1 and v2
 invKmat1 = inv(cam1.Kmat);
 v1 = cam1.Rmat' * invKmat1 * Pu1;
