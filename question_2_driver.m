@@ -1,4 +1,4 @@
-function output = question_2_driver()
+function [out3Dpoints, msqd_err] = question_2_driver()
 % reconstructs a 3D points from 2D points
 
 % get 2D points
@@ -11,6 +11,7 @@ points3D = zeros(3,39);
 for i = 1:39
     points3D(1:3,i) = triang(res1(1:3,i), res2(1:3,i));
 end
+out3Dpoints = points3D;
 
 % compute percent error for each corresponding 3D point
 mse = zeros(1,39);
@@ -21,6 +22,6 @@ for i = 1:39
     mse(1,i) = distance/3;
 
 end
- output = mse;
+ msqd_err = mse;
 
 end
