@@ -1,4 +1,4 @@
-function point3D = triangulation(Pu1,Pu2)
+function point3D = triang(Pu1,Pu2)
 % takes two 2D points and returns a recovered 3D point by
 % performing triangulation.
 
