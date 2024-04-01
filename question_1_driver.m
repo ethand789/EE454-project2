@@ -18,14 +18,14 @@ for i=1:39
 end
 
 %present images with overlay of calculated points
-%imData = imread('Project2DataFiles\im1corrected.jpg');
+% imData = imread('Project2DataFiles\im1corrected.jpg');
 imData = imread('Project2DataFiles\im2corrected.jpg');
 
 imshow(imData);
 hold on
 
-%scatter(res1(:,1), res1(:,2), 'r', 'o');
-scatter(res2(:,1), res2(:,2), 'r', 'o');
+% scatter(res1(1,:), res1(2,:), 'r', 'o');
+scatter(res2(1,:), res2(2,:), 'r', 'o');
 
 hold off
 
