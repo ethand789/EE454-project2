@@ -1,0 +1,11 @@
+function [outputArg1,outputArg2] = question_2_driver()
+%QUESTION_2_DRIVER Summary of this function goes here
+[res1, res2] = question_1_driver;
+
+points3D = zeros(3,39);
+
+for i = 1:39
+    points3D()
+
+end
+
