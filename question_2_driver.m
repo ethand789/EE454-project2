@@ -9,7 +9,7 @@ points3D = zeros(3,39);
 
 % reconstruct 3D points from 2D points
 for i = 1:39
-    points3D(1:3,i) = triang(res1(i,1:3), res2(i,1:3));
+    points3D(1:3,i) = triang(res1(1:3,i), res2(1:3,i));
 end
 
 % compute percent error for each corresponding 3D point
@@ -17,9 +17,8 @@ mse = zeros(1,39);
 
 for i = 1:39
     distance = norm(points3D(1:3,i) - Opoints3D(1:3,i));
-    actual_distance = norm(points3D(1:3,i));
-
-    mse(1,i) = (distance/actual_distance)*100;
+    distance = distance^2;
+    mse(1,i) = distance/3;
 
 end
  output = mse;

@@ -17,10 +17,13 @@ c1 = -Rmat1 * t1;
 c2 = -Rmat2 * t2;
 
 %compute vector v1 and v2
-v1 = cam1.Rmat' * (cam1.Kmat / Pu1);
+invKmat1 = inv(cam1.Kmat);
+v1 = cam1.Rmat' * invKmat1 * Pu1;
 v1 = v1/norm(v1);
 
-v2 = cam2.Rmat' * (cam2.Kmat / Pu2);
+
+invKmat2 = inv(cam2.Kmat);
+v2 = cam2.Rmat' * invKmat2 * Pu2;
 v2 = v2/norm(v2);
 
 % get viewing ray 1 and 2
@@ -30,9 +33,9 @@ viewRay2 = [c2, v2];
 % compute cross product of v1 and v2
 v1xv2 = cross(v1, v2);
 
+
 % get unit vector v3
 v3 = v1xv2/norm(v1xv2);
-v3 = v1xv2;
 
 % define variables a, b and d
 syms a b d
