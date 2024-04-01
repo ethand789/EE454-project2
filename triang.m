@@ -11,10 +11,8 @@ t1 = cam1.Pmat(1:3,4);
 t2 = cam2.Pmat(1:3,4);
 
 % get location c1 and c2
-Rmat1 = cam1.Rmat';
-Rmat2 = cam2.Rmat';
-c1 = -Rmat1 * t1;
-c2 = -Rmat2 * t2;
+c1 = cam1.position';
+c2 = cam2.position';
 
 %compute vector v1 and v2
 v1 = cam1.Rmat' * (cam1.Kmat / Pu1);
