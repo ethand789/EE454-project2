@@ -11,31 +11,28 @@ source = imread(image);
 %make new image
 dest = zeros(200,300,nb);
 
-%click four points in source
-figure(1); colormap(gray); clf;
-imagesc(source);
-axis image
-    res=pointTo2D([5;5;0],param);
+%get four points in source
+    res=pointTo2D([5;5;0;1],param);
     xpts(1)=res(1);
     ypts(1)=res(2);
 
-    res=pointTo2D([-5;5;0],param);
+    res=pointTo2D([-5;5;0;1],param);
     xpts(2)=res(1);
     ypts(2)=res(2);
 
-    res=pointTo2D([5;-5;0],param);
+    res=pointTo2D([5;-5;0;1],param);
     xpts(3)=res(1);
     ypts(3)=res(2);
 
-    res=pointTo2D([-5;-5;0],param);
+    res=pointTo2D([-5;-5;0;1],param);
     xpts(4)=res(1);
     ypts(4)=res(2);
 
 %input rectangle in destination image
 
-xp1 = 5;
+xp1 = -5;
 yp1 = 5;
-xp2 = -5;
+xp2 = 5;
 yp2 = -5;
 xprimes = [xp1 xp2 xp2 xp1]';
 yprimes = [yp1 yp1 yp2 yp2]';
