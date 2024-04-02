@@ -38,7 +38,7 @@ xprimes = [xp1 xp2 xp2 xp1]';
 yprimes = [yp1 yp1 yp2 yp2]';
 
 %compute homography (from im2 to im1 coord system)
-p1 = xpts; p2 = ypts;
+p1 = xpts'; p2 = ypts';
 p3 = xprimes; p4 = yprimes;
 vec1 = ones(size(p1,1),1);
 vec0 = zeros(size(p1,1),1);
