@@ -12,11 +12,11 @@ source = imread(image);
 dest = zeros(200,300,nb);
 
 %get four points in source
-    res=pointTo2D([5;5;0;1],param);
+    res=pointTo2D([-5;5;0;1],param);
     xpts(1)=res(1);
     ypts(1)=res(2);
 
-    res=pointTo2D([-5;5;0;1],param);
+    res=pointTo2D([5;5;0;1],param);
     xpts(2)=res(1);
     ypts(2)=res(2);
 
